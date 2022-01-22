@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphql.PoC.Server.Application", "Graphql.PoC.Server.Application\Graphql.PoC.Server.Application.csproj", "{8FE5ACC7-4614-4AC2-959D-18C8532AB197}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphql.PoC.Server.Infra", "Graphql.PoC.Server.Domain\Graphql.PoC.Server.Infra.csproj", "{8E29C3C8-081F-496A-A23F-6F1EF56344DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphql.PoC.Server.HotChocolate", "Graphql.PoC.Server.HotChocolate\Graphql.PoC.Server.HotChocolate.csproj", "{E40E778D-F4A6-472D-89C6-0627476351D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{E225BCC5-64FE-4F7F-A3F4-16E784675AFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "adapters", "adapters", "{207F7B00-16E9-4D41-AC65-CAAA7982C480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FE5ACC7-4614-4AC2-959D-18C8532AB197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE5ACC7-4614-4AC2-959D-18C8532AB197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE5ACC7-4614-4AC2-959D-18C8532AB197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE5ACC7-4614-4AC2-959D-18C8532AB197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E29C3C8-081F-496A-A23F-6F1EF56344DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E29C3C8-081F-496A-A23F-6F1EF56344DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E29C3C8-081F-496A-A23F-6F1EF56344DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E29C3C8-081F-496A-A23F-6F1EF56344DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40E778D-F4A6-472D-89C6-0627476351D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40E778D-F4A6-472D-89C6-0627476351D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40E778D-F4A6-472D-89C6-0627476351D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40E778D-F4A6-472D-89C6-0627476351D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FE5ACC7-4614-4AC2-959D-18C8532AB197} = {E225BCC5-64FE-4F7F-A3F4-16E784675AFF}
+		{8E29C3C8-081F-496A-A23F-6F1EF56344DC} = {E225BCC5-64FE-4F7F-A3F4-16E784675AFF}
+		{E40E778D-F4A6-472D-89C6-0627476351D9} = {207F7B00-16E9-4D41-AC65-CAAA7982C480}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BC00F7D-E08F-43E1-B385-3A542D17BFBC}
+	EndGlobalSection
+EndGlobal
