@@ -1,5 +1,8 @@
 ﻿using Graphql.PoC.Server.Infra.Entities.Bases;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
+using Microsoft.Extensions.Options;
 using System.Reflection;
 
 namespace Graphql.PoC.Server.Infra.Context
