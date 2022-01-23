@@ -23,6 +23,7 @@ namespace Graphql.PoC.Server.Infra.Entities
         /// <summary>
         /// Dependentes da pessoa
         /// </summary>
+        [UseFiltering]
         public ICollection<Dependent> Dependents { get; set; }
 
         /// <summary>

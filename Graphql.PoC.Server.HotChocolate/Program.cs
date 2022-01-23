@@ -3,6 +3,9 @@ using Graphql.PoC.Server.HotChocolate.Root;
 using Graphql.PoC.Server.Infra.Context;
 using HotChocolate.Execution.Configuration;
 using Microsoft.EntityFrameworkCore;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +35,7 @@ var graphqlBuilder = builder.Services
        .AddGraphQLServer()
        .AddQueryType<Query>()
        .AddMutationType<Mutation>()
+       .AddInstrumentation()
        //.AddTypeExtension<PersonQueryResolver>()
        .AddMutationConventions()
        .AddProjections()
@@ -41,11 +45,33 @@ RegisterAllResolvers(graphqlBuilder, Assembly.GetExecutingAssembly());
 
 builder.Services.AddScoped<PersonService>();
 
+builder.Services.AddOpenTelemetryTracing(
+    b =>
+    {
+        b.AddHttpClientInstrumentation();
+        b.AddAspNetCoreInstrumentation();
+        b.AddHotChocolateInstrumentation();
+        b.AddJaegerExporter(options =>
+        {
+            options.AgentHost = "localhost";
+            options.AgentPort = 6831;
+        });
+    });
+
+builder.Logging.AddOpenTelemetry(
+    b =>
+    {
+        b.IncludeFormattedMessage = true;
+        b.IncludeScopes = true;
+        b.ParseStateValues = true;
+        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Demo"));
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
